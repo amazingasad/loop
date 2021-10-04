@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        ul{
+            transition: all 0.5s;
+        }
+        .also{
+            display: flex;
+        }
+        #display{
+            width: 50%;
+            height: 100%;
+            text-align: center;
+            font-size: 20px;
+            margin: auto;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+        #button{
+            margin: 10px auto;
+            border: 1px solid tomato;
+            background-color: salmon;
+            height: 100%;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+        }
+        #button:focus{
+            transform: scale(1.1);
+            transition: transform 0.5s;
+        }
+        li{
+            list-style: none;
+        }
+        #hide{
+        	width:50%;
+        	height:100px;
+        	margin:10px auto;
+        	background-color:#35424c;
+        	transition: all 0.3s;
+        	display:none;
+        }
+    </style>
+    <title>Loop Text</title>
+</head>
+<body>
+    <div class="also">
+        <div id="display">
+            <ul id="list"></ul>
+        </div>
+        <button id="button">click me</button>
+    </div>
+    <div id="hide" >
+    	
+    </div>
+    <script>
+        let display = document.getElementById("display");
+        const button = document.getElementById("button");
+        const list = document.getElementById("list");
+        const hide = document.getElementById("hide")
+        button.addEventListener("click", function(){
+            let i = 0
+            hide.style.display = "block"
+            while (true) {
+                i++;
+                console.log(`also ${i}`)
+                const li = document.createElement("li");
+                li.innerText = `also ${i}`;
+                list.appendChild(li);
+            }
+        })
+    </script>
+</body>
+</html>
