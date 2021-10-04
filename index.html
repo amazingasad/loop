@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+    body {
+    	text-align:center;
+    }
         ul{
             transition: all 0.5s;
         }
@@ -37,35 +40,23 @@
         li{
             list-style: none;
         }
-        #hide{
-        	width:50%;
-        	height:100px;
-        	margin:10px auto;
-        	background-color:#35424c;
-        	transition: all 0.3s;
-        	display:none;
-        }
     </style>
     <title>Loop Text</title>
 </head>
 <body>
+	<h3>After clicking the button you can't reload or refresh the page</h3>
     <div class="also">
         <div id="display">
             <ul id="list"></ul>
         </div>
         <button id="button">click me</button>
     </div>
-    <div id="hide" >
-    	
-    </div>
     <script>
         let display = document.getElementById("display");
         const button = document.getElementById("button");
         const list = document.getElementById("list");
-        const hide = document.getElementById("hide")
         button.addEventListener("click", function(){
-            let i = 0
-            hide.style.display = "block"
+            let i = 0;
             while (true) {
                 i++;
                 console.log(`also ${i}`)
